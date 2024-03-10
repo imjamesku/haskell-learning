@@ -46,7 +46,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - haskell-lens
-    # - lens
+    - lens
 
 tests:
   haskell-lens-test:
