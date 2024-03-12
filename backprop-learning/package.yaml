@@ -24,6 +24,7 @@ dependencies:
 - backprop
 - lens
 - hmatrix
+- hmatrix-backprop
 
 ghc-options:
 - -Wall
@@ -38,6 +39,8 @@ ghc-options:
 
 library:
   source-dirs: src
+  # exposed-modules:
+  # - Lib
 
 executables:
   backprop-learning-exe:
@@ -49,6 +52,18 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - backprop-learning
+    # other-modules:
+    # - Lib
+
+  without-backprop-exe:
+    main:               WithoutBackprop.hs
+    source-dirs:         without-backprop
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    # dependencies:
+    # - backprop-learning
 
 tests:
   backprop-learning-test:

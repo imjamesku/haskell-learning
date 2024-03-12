@@ -1,6 +1,6 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.36.0.
+-- This file has been generated from package.yaml by hpack version 0.35.2.
 --
 -- see: https://github.com/sol/hpack
 
@@ -37,6 +37,7 @@ library
       backprop
     , base >=4.7 && <5
     , hmatrix
+    , hmatrix-backprop
     , lens
   default-language: Haskell2010
 
@@ -54,6 +55,24 @@ executable backprop-learning-exe
     , backprop-learning
     , base >=4.7 && <5
     , hmatrix
+    , hmatrix-backprop
+    , lens
+  default-language: Haskell2010
+
+executable without-backprop-exe
+  main-is: WithoutBackprop.hs
+  other-modules:
+      Paths_backprop_learning
+  autogen-modules:
+      Paths_backprop_learning
+  hs-source-dirs:
+      without-backprop
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      backprop
+    , base >=4.7 && <5
+    , hmatrix
+    , hmatrix-backprop
     , lens
   default-language: Haskell2010
 
@@ -72,5 +91,6 @@ test-suite backprop-learning-test
     , backprop-learning
     , base >=4.7 && <5
     , hmatrix
+    , hmatrix-backprop
     , lens
   default-language: Haskell2010
