@@ -35,6 +35,9 @@ ghc-options:
 
 library:
   source-dirs: src
+  dependencies:
+   - hmatrix
+   - hmatrix-morpheus
 
 executables:
   multi-layer-exe:
@@ -46,6 +49,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - multi-layer
+    - hmatrix
 
 tests:
   multi-layer-test:
