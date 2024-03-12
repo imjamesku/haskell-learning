@@ -25,6 +25,7 @@ dependencies:
 - lens
 - hmatrix
 - hmatrix-backprop
+- one-liner-instances
 
 ghc-options:
 - -Wall
