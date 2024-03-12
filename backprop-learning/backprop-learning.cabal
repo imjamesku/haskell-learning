@@ -1,6 +1,6 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.35.2.
+-- This file has been generated from package.yaml by hpack version 0.36.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -36,10 +36,17 @@ library
   build-depends:
       backprop
     , base >=4.7 && <5
+    , deepseq
+    , filepath
     , hmatrix
     , hmatrix-backprop
     , lens
+    , mnist-idx
+    , mwc-random
     , one-liner-instances
+    , split
+    , transformers
+    , vector
   default-language: Haskell2010
 
 executable backprop-learning-exe
@@ -55,10 +62,42 @@ executable backprop-learning-exe
       backprop
     , backprop-learning
     , base >=4.7 && <5
+    , deepseq
+    , filepath
     , hmatrix
     , hmatrix-backprop
     , lens
+    , mnist-idx
+    , mwc-random
     , one-liner-instances
+    , split
+    , transformers
+    , vector
+  default-language: Haskell2010
+
+executable with-backprop-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_backprop_learning
+  autogen-modules:
+      Paths_backprop_learning
+  hs-source-dirs:
+      with-backprop
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      backprop
+    , base >=4.7 && <5
+    , deepseq
+    , filepath
+    , hmatrix
+    , hmatrix-backprop
+    , lens
+    , mnist-idx
+    , mwc-random
+    , one-liner-instances
+    , split
+    , transformers
+    , vector
   default-language: Haskell2010
 
 executable without-backprop-exe
@@ -73,10 +112,17 @@ executable without-backprop-exe
   build-depends:
       backprop
     , base >=4.7 && <5
+    , deepseq
+    , filepath
     , hmatrix
     , hmatrix-backprop
     , lens
+    , mnist-idx
+    , mwc-random
     , one-liner-instances
+    , split
+    , transformers
+    , vector
   default-language: Haskell2010
 
 test-suite backprop-learning-test
@@ -93,8 +139,15 @@ test-suite backprop-learning-test
       backprop
     , backprop-learning
     , base >=4.7 && <5
+    , deepseq
+    , filepath
     , hmatrix
     , hmatrix-backprop
     , lens
+    , mnist-idx
+    , mwc-random
     , one-liner-instances
+    , split
+    , transformers
+    , vector
   default-language: Haskell2010

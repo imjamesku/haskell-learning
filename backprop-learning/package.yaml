@@ -26,6 +26,13 @@ dependencies:
 - hmatrix
 - hmatrix-backprop
 - one-liner-instances
+- transformers
+- deepseq
+- mnist-idx
+- split
+- vector
+- mwc-random
+- filepath
 
 ghc-options:
 - -Wall
@@ -59,6 +66,15 @@ executables:
   without-backprop-exe:
     main:               WithoutBackprop.hs
     source-dirs:         without-backprop
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    # dependencies:
+    # - backprop-learning
+  with-backprop-exe:
+    main:               Main.hs
+    source-dirs:         with-backprop
     ghc-options:
     - -threaded
     - -rtsopts
